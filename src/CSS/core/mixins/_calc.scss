@@ -1,0 +1,9 @@
+@mixin calc($property, $default, $expression) {
+	#{$property}: $default;
+	#{$property}: -webkit-calc(#{$expression});
+	#{$property}: -moz-calc(#{$expression});
+	#{$property}: calc(#{$expression});
+} 
+
+
+// @include calc( width, '98%', '100% - 2px');

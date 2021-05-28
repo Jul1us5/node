@@ -1,0 +1,12 @@
+@import '~normalize.css';
+@import '../../node_modules/sass-mixins/mixins.scss';
+@import 'reset';
+// @import './core/extends';
+@import './core/mixins';
+@import 'var';
+@import 'fonts';
+// --------------------
+@font-face {
+    font-family: 'Roboto';
+    src: url('../FONTS/Roboto/Roboto-Regular.ttf') format('truetype');
+}

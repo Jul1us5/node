@@ -1,0 +1,10 @@
+//usage: @include background('img.png', center, no-repeat);
+
+
+@mixin bg($img,$position:center,$repeat: no-repeat) {
+    background: {
+        image: url("../img/#{$img}");
+        position: $position;
+        repeat: $repeat;
+    }
+}
