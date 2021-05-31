@@ -65,7 +65,7 @@ const fileLoaders = (dir) => {
 
 
 //  Adding multi HTML files 
-const HtmlPages = ['index']
+const HtmlPages = ['index', 'client']
 const MultiHtmlPlugins = HtmlPages.map(name => {
         return new HtmlWebpackPlugin({
             template: `./${name}.html`,

@@ -64,14 +64,14 @@ var svgIcons = ["<svg version=\"1.1\" id=\"Capa_1\" xmlns=\"http://www.w3.org/20
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _CSS_main_scss__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../CSS/main.scss */ "./CSS/main.scss");
-/* harmony import */ var _JSON_json__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../JSON/json */ "./JSON/json.json");
-/* harmony import */ var _data__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./data */ "./JS/data.js");
+/* harmony import */ var _data__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./data */ "./JS/data.js");
+/* harmony import */ var _CSS_main_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../CSS/main.scss */ "./CSS/main.scss");
+/* harmony import */ var _JSON_json__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../JSON/json */ "./JSON/json.json");
 /* harmony import */ var _IMG_gallery_a1_jpeg__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./../IMG/gallery/a1.jpeg */ "./IMG/gallery/a1.jpeg");
 /* harmony import */ var _IMG_gallery_a2_jpeg__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./../IMG/gallery/a2.jpeg */ "./IMG/gallery/a2.jpeg");
 /* harmony import */ var _IMG_gallery_a3_jpeg__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./../IMG/gallery/a3.jpeg */ "./IMG/gallery/a3.jpeg");
-// import data from '@/data'
-// import data from './data';
+ // import data from './data';
+
 
 
 
@@ -83,7 +83,7 @@ function getArrowImg() {
   var arrow = document.querySelectorAll('.arrow');
 
   for (var i = 0; i < arrow.length; i++) {
-    arrow[i].innerHTML = _data__WEBPACK_IMPORTED_MODULE_2__.default[i];
+    arrow[i].innerHTML = _data__WEBPACK_IMPORTED_MODULE_0__.default[i];
   }
 }
 
@@ -94,15 +94,20 @@ function showGallery() {
   var index = 0;
   var arrow = document.querySelectorAll('.arrow');
   var galleryActions = document.querySelector('.actions');
-  var galleryDots = document.querySelector('.actions span');
+  var galleryDots = document.querySelectorAll('.actions span');
   var galleryImg = ['a1.jpeg', 'a2.jpeg', 'a3.jpeg'];
   var where = document.querySelector('.img__wrap'); //  ........
 
   HTML = "<img src=\"./IMG/".concat(galleryImg[index], "\" alt=\"img\">");
+  galleryDots[index].style.backgroundColor = 'red';
   where.innerHTML = HTML;
 
   var _loop = function _loop(i) {
     arrow[i].addEventListener('click', function () {
+      for (var x = 0; x < 2; x++) {
+        galleryDots[x].style.backgroundColor = 'green';
+      }
+
       if (arrow[i].className == 'arrow left') {
         index -= 1;
       } else {
@@ -110,6 +115,7 @@ function showGallery() {
       }
 
       if (index > 2) {
+        galleryDots[2].style.backgroundColor = 'green';
         index = 0;
       }
 
@@ -118,7 +124,8 @@ function showGallery() {
       }
 
       HTML = "<img src=\"./IMG/".concat(galleryImg[index], "\" alt=\"img\">");
-      where.innerHTML = HTML; // console.log(galleryDots[0].style.backgroundColor = 'red');
+      where.innerHTML = HTML;
+      galleryDots[index].style.backgroundColor = 'red'; // console.log(galleryDots[0].style.backgroundColor = 'red');
       // for (let x = 0; x < galleryImg.length; x++) {
       //     galleryActions.innerHTML += `<span></span>`
       // }
@@ -10137,7 +10144,7 @@ _global["default"]._babelPolyfill = true;
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _main__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./main */ "./JS/main.js");
 // Here connect all Javascript files
-
+ // import client from './client';
 })();
 
 /******/ })()
